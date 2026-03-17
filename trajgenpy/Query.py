@@ -1,6 +1,5 @@
 from pathlib import Path
 
-import osmnx as ox
 import shapely
 from geojson import Feature, FeatureCollection, dump
 
@@ -15,6 +14,8 @@ def query_features(area: GeoPolygon, tags: dict):
     if not area.crs and area.crs != "WGS84":
         msg = "The geometry must use WGS84 CRS!"
         raise ValueError(msg)
+
+    import osmnx as ox
 
     try:
         geometries = ox.features_from_polygon(area.get_geometry(), tags=tags)

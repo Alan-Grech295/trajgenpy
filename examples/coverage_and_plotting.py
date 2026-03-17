@@ -45,7 +45,7 @@ def custom_example():
     geo_poly.set_crs("EPSG:3857")
 
     polygon_list = Geometries.decompose_polygon(geo_poly.get_geometry(), obstacles=None)
-    # Define the coordinates for the inner polygon
+    # Define the coordinates for the inner polylgon
     hole = shapely.Polygon(
         [
             [10.465643258937206, 55.38227460993366],

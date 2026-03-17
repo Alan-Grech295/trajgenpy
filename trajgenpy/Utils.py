@@ -1,4 +1,3 @@
-import contextily as ctx
 import matplotlib.pyplot as plt
 import shapely
 from shapely.affinity import translate
@@ -7,7 +6,9 @@ from shapely.affinity import translate
 
 
 # A function to plot a map using the contextily library
-def plot_basemap(ax=None, provider=ctx.providers.Esri.WorldImagery, crs="WGS84"):
+def plot_basemap(ax=None, provider="ctx.providers.Esri.WorldImagery", crs="WGS84"):
+    import contextily as ctx
+
     if ax is None:
         ax = plt.gca()
     return ctx.add_basemap(ax, source=provider, crs=crs)
